@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pos/components/text.dart';
 
 class PasswordInputText extends StatefulWidget {
   const PasswordInputText(
@@ -35,7 +36,9 @@ class _PasswordInputTextState extends State<PasswordInputText> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Senha'),
+        Padding(padding: EdgeInsets.only(top: 10)),
+        TextWidget(),
+        Padding(padding: EdgeInsets.all(5)),
         TextField(
           obscureText: showPassword,
           controller: controller,

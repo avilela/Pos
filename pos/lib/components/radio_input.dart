@@ -1,51 +1,43 @@
 import 'package:flutter/material.dart';
 
-enum SingingCharacter { sim, nao }
-SingingCharacter _character = SingingCharacter.sim;
+class RadioItem extends StatelessWidget {
+  final RadioModel _item;
 
-class RadioButtonRow extends StatefulWidget {
-  @override
-  _RadioButtonRowState createState() => _RadioButtonRowState();
-}
+  RadioItem(this._item);
 
-class _RadioButtonRowState extends State<RadioButtonRow> {
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    return Container(
-      width: width,
-      child: Row(
+    return new Container(
+      margin: new EdgeInsets.all(15.0),
+      child: new Row(
+        mainAxisSize: MainAxisSize.max,
         children: <Widget>[
-          Expanded(
-            child: ListTile(
-              title: const Text('Sim'),
-              leading: Radio(
-                value: SingingCharacter.sim,
-                groupValue: _character,
-                onChanged: (SingingCharacter value) {
-                  setState(() {
-                    _character = value;
-                  });
-                },
+          new Container(
+            height: 50.0,
+            width: 50.0,
+            decoration: new BoxDecoration(
+              color: _item.isSelected ? Colors.blueAccent : Colors.transparent,
+              shape: BoxShape.circle,
+              border: new Border.all(
+                width: 1.0,
+                color: _item.isSelected ? Colors.blueAccent : Colors.grey,
               ),
             ),
           ),
-          Expanded(
-            child: ListTile(
-              title: const Text('Não'),
-              leading: Radio(
-                value: SingingCharacter.nao,
-                groupValue: _character,
-                onChanged: (SingingCharacter value) {
-                  setState(() {
-                    _character = value;
-                  });
-                },
-              ),
-            ),
-          ),
+          new Container(
+            margin: new EdgeInsets.only(left: 10.0),
+            child: new Text(_item.text),
+          )
         ],
       ),
     );
   }
+}
+
+class RadioModel {
+  bool isSelected;
+  final String buttonText;
+  final String text;
+
+  RadioModel(this.isSelected, this.buttonText, this.text);
 }

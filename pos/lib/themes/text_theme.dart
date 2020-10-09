@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class TextTheme {
-  TextTheme._();
+class TextThemes {
+  TextThemes._();
 
   static const Color nearlyWhite = Color(0xFFFAFAFA);
   static const Color white = Color(0xFFFFFFFF);
@@ -53,7 +53,7 @@ class TextTheme {
     fontWeight: FontWeight.bold,
     fontSize: 16,
     letterSpacing: 0.18,
-    color: darkerText,
+    color: Color(0xFF303030),
   );
 
   static const TextStyle subtitle = TextStyle(
@@ -75,7 +75,7 @@ class TextTheme {
   static const TextStyle body1 = TextStyle(
     fontFamily: fontName,
     fontWeight: FontWeight.w400,
-    fontSize: 16,
+    fontSize: 32,
     letterSpacing: -0.05,
     color: darkText,
   );

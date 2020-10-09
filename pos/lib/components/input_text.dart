@@ -1,5 +1,7 @@
 //TextField()
 import 'package:flutter/material.dart';
+import 'package:pos/components/text.dart';
+import '../themes/text_theme.dart';
 
 class TextInputWidget extends StatefulWidget {
   TextInputWidget({Key key}) : super(key: key);
@@ -14,7 +16,9 @@ class _TextInputWidgetState extends State<TextInputWidget> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Texto'),
+        Padding(padding: EdgeInsets.only(top: 10)),
+        TextWidget(),
+        Padding(padding: EdgeInsets.all(5)),
         TextField(
           decoration: InputDecoration(
               border: const OutlineInputBorder(),

@@ -10,11 +10,26 @@ class SecondaryButtonWidget extends StatefulWidget {
 class _SecondaryButtonWidgetState extends State<SecondaryButtonWidget> {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return new SizedBox(
       width: double.infinity,
-      child: RaisedButton(
-        onPressed: () {},
-        child: const Text('Secondary Button', style: TextStyle(fontSize: 20)),
+      height: 60.0,
+      child: FlatButton(
+        child: new Text(
+          "Button text",
+          style: TextStyle(
+              fontSize: 20,
+              color: Color(0xFF1684BA),
+              fontWeight: FontWeight.normal),
+        ),
+        onPressed: null,
+        shape: new RoundedRectangleBorder(
+          borderRadius: new BorderRadius.circular(6.0),
+          side: BorderSide(
+            color: Color(0xFF1684BA),
+            width: 2,
+            style: BorderStyle.solid,
+          ),
+        ),
       ),
     );
   }

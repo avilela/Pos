@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pos/components/text.dart';
+import '../themes/text_theme.dart';
 
 class DropDownWidget extends StatefulWidget {
   DropDownWidget({Key key}) : super(key: key);
@@ -18,7 +20,9 @@ class _DropDownWidgetState extends State<DropDownWidget> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Combo'),
+        Padding(padding: EdgeInsets.only(top: 10)),
+        TextWidget(),
+        Padding(padding: EdgeInsets.all(5)),
         Container(
             padding: EdgeInsets.symmetric(horizontal: 10.0),
             decoration: BoxDecoration(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'page/home.dart';
-import 'themas/'
+import 'themes/text_theme.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Style Guide',
       theme: ThemeData(
-        textTheme: ,
+        textTheme: TextThemes.textTheme,
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
