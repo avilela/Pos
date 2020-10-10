@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'text.dart';
 
 class RadioItem extends StatelessWidget {
   final RadioModel _item;
@@ -16,17 +17,17 @@ class RadioItem extends StatelessWidget {
             height: 50.0,
             width: 50.0,
             decoration: new BoxDecoration(
-              color: _item.isSelected ? Colors.blueAccent : Colors.transparent,
+              color: _item.isSelected ? Color(0xff1684BA) : Colors.transparent,
               shape: BoxShape.circle,
               border: new Border.all(
                 width: 1.0,
-                color: _item.isSelected ? Colors.blueAccent : Colors.grey,
+                color: _item.isSelected ? Color(0xff1684BA) : Colors.grey,
               ),
             ),
           ),
           new Container(
             margin: new EdgeInsets.only(left: 10.0),
-            child: new Text(_item.text),
+            child: new TextWidget(_item.text),
           )
         ],
       ),

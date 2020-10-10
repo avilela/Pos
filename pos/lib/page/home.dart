@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:pos/components/text.dart';
 import '../components/dropdown.dart';
 import '../components/input_text.dart';
 import '../components/input_password.dart';
 import '../components/primary_button.dart';
 import '../components/radio_input.dart';
 import '../components/secondary_button.dart';
+import '../page/scheduling.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -22,8 +24,8 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    sampleData.add(new RadioModel(false, 'A', 'April 18'));
-    sampleData.add(new RadioModel(false, 'B', 'April 17'));
+    sampleData.add(new RadioModel(false, 'A', 'Sim'));
+    sampleData.add(new RadioModel(false, 'B', 'Não'));
   }
 
   @override
@@ -47,16 +49,16 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  DropDownWidget(),
-                  TextInputWidget(),
-                  PasswordInputText(),
+                  DropDownWidget('Dropdown'),
+                  TextInputWidget('Texto'),
+                  PasswordInputText('Senha'),
                   Padding(padding: EdgeInsets.only(top: 10)),
-                  PrimaryButtonWidget(),
+                  PrimaryButtonWidget('Primary Button'),
                   Padding(padding: EdgeInsets.only(top: 10)),
-                  SecondaryButtonWidget(),
+                  SecondaryButtonWidget('Secondary Button'),
                   Padding(padding: EdgeInsets.only(top: 10)),
                   Container(
-                    height: 50,
+                    height: 65,
                     width: MediaQuery.of(context).size.width,
                     child: Center(
                       child: new ListView.builder(
@@ -77,7 +79,20 @@ class _MyHomePageState extends State<MyHomePage> {
                         },
                       ),
                     ),
-                  )
+                  ),
+                  Padding(padding: EdgeInsets.only(bottom: 50)),
+                  FlatButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              SchedulingPage(title: 'Agendar\nVacinação'),
+                        ),
+                      );
+                    },
+                    child: Text('Ir para tela'),
+                  ),
                 ],
               ),
             ),

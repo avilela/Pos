@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:pos/components/text.dart';
-import '../themes/text_theme.dart';
 
 class DropDownWidget extends StatefulWidget {
-  DropDownWidget({Key key}) : super(key: key);
+  DropDownWidget(this.textLabel, {Key key}) : super(key: key);
+
+  final String textLabel;
 
   @override
   _DropDownWidgetState createState() => _DropDownWidgetState();
@@ -21,13 +22,13 @@ class _DropDownWidgetState extends State<DropDownWidget> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(padding: EdgeInsets.only(top: 10)),
-        TextWidget(),
+        TextWidget(widget.textLabel),
         Padding(padding: EdgeInsets.all(5)),
         Container(
             padding: EdgeInsets.symmetric(horizontal: 10.0),
             decoration: BoxDecoration(
               color: borderColor,
-              borderRadius: BorderRadius.circular(10.0),
+              borderRadius: BorderRadius.circular(6.0),
               border: Border.all(
                   color: borderColor, style: BorderStyle.solid, width: 1.80),
             ),
